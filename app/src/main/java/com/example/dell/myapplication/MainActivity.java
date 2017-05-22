@@ -5,14 +5,50 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
     Button one,two,three,four,five,six,seven,eight,nine,zero,plus,minus,mult,div,equal,btnc,btnce,btnsin,btnlog,btnsqrt;
     TextView tv1,tv2;
+    ToggleButton toggle;
+    RadioGroup rg;
     int flag=0,num1=0,num2=0;
+   /* public void onRadioButtonClicked(View view) {
+    boolean checked=((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.radiomainscientific:
+                if(checked)
+                    btnlog.setVisibility(view.VISIBLE);
+                    btnsin.setVisibility(view.VISIBLE);
+                    btnsqrt.setVisibility(view.VISIBLE);
+                    break;
+            case R.id.radiomainsimple:
+                if(checked)
+                    btnlog.setVisibility(view.INVISIBLE);
+                     btnsin.setVisibility(view.INVISIBLE);
+                    btnsqrt.setVisibility(view.INVISIBLE);
+        }
+    }*/
+   public void onToggleClicked(View view) {
+       // Is the toggle on?
+       boolean on = ((ToggleButton) view).isChecked();
+
+       if (on) {
+           btnlog.setVisibility(view.VISIBLE);
+           btnsin.setVisibility(view.VISIBLE);
+           btnsqrt.setVisibility(view.VISIBLE);
+       } else {
+           btnlog.setVisibility(view.INVISIBLE);
+           btnsin.setVisibility(view.INVISIBLE);
+           btnsqrt.setVisibility(view.INVISIBLE);
+       }
+   }
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -43,10 +79,20 @@ public class MainActivity extends AppCompatActivity {
         btnsqrt=(Button) findViewById(R.id.btnmainsqrt);
         btnsin=(Button) findViewById(R.id.btnmainsin);
 
+        toggle= (ToggleButton) findViewById(R.id.togglemain);
+
+
+
         btnc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tv1.setText((tv1.getText()).subSequence(0,tv1.length()-1));
+            }
+        });
+        btnce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv1.setText("");
             }
         });
         zero.setOnClickListener(new View.OnClickListener() {
@@ -114,11 +160,35 @@ public class MainActivity extends AppCompatActivity {
         btnsqrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int x;
-                x=Integer.parseInt(tv1.getText()+"");
-                tv1.setText((Math.sqrt(x))+"");
+                double x,y;
+                x= Double.parseDouble(tv1.getText() + "");
+                y=Math.sqrt(x);
+                String ans=String.format("%.2f",y);
+                tv1.setText(ans);
             }
         });
+        btnsin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double x,y;
+                x= Double.parseDouble(tv1.getText() + "");
+                y=Math.sin(x);
+                String ans=String.format("%.2f",y);
+                tv1.setText(ans);
+            }
+        });
+        btnlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                double x,y;
+                x= Double.parseDouble(tv1.getText() + "");
+                y=Math.log(x);
+                String ans=String.format("%.2f",y);
+                tv1.setText(ans);
+            }
+        });
+
 
         plus.setOnClickListener(new View.OnClickListener() {
             @Override

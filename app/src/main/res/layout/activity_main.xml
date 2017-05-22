@@ -20,6 +20,48 @@
             android:textSize="50dp"
             />
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculator Type"
+                android:textSize="20dp"/>
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simple"
+                android:id="@+id/togglemain"
+                android:textOff="Simple"
+                android:textOn="Scientific"
+                android:onClick="onToggleClicked"/>
+
+           <!-- <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/radiogroupmain">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simple"
+            android:textSize="20dp"
+            android:id="@+id/radiomainsimple"
+            android:onClick="onRadioButtonClicked"
+            android:checked="true"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scientific"
+                android:textSize="20dp"
+                android:id="@+id/radiomainscientific"
+                android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>-->
+        </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,7 +166,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="C"
+            android:text="bK"
             android:textSize="30dp"
             android:id="@+id/btnmainC"/>
 
@@ -152,7 +194,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="15dp">
+        android:paddingLeft="5dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -165,21 +207,24 @@
             android:layout_height="wrap_content"
             android:text="sqrt"
             android:textSize="30dp"
-            android:id="@+id/btnmainsqrt"/>
+            android:id="@+id/btnmainsqrt"
+            android:visibility="invisible"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sin"
             android:textSize="30dp"
-            android:id="@+id/btnmainsin"/>
+            android:id="@+id/btnmainsin"
+            android:visibility="invisible"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="log"
             android:textSize="30dp"
-            android:id="@+id/btnmainlog"/>
+            android:id="@+id/btnmainlog"
+            android:visibility="invisible"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
