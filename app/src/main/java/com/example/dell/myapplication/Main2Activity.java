@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
-    Button btncalc,btnlogin,btnsignup,btnStudent;
+    Button btncalc,btnlogin,btnsignup,btnStudent,btnCollection;
     EditText et1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class Main2Activity extends AppCompatActivity {
         btnlogin= (Button) findViewById(R.id.btnmain2login);
         btnsignup= (Button) findViewById(R.id.btnmain2signup);
         btnStudent= (Button) findViewById(R.id.btnStudentDemo);
+        btnCollection= (Button) findViewById(R.id.btnCollectionDemo);
         et1= (EditText) findViewById(R.id.txtmain2demo);
 
         btncalc.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +44,13 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it2=new Intent(Main2Activity.this,AllStudentActivity.class);
                 startActivity(it2);
+            }
+        });
+        btnCollection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it3=new Intent(Main2Activity.this,AllCollectionActivity.class);
+                startActivity(it3);
             }
         });
 

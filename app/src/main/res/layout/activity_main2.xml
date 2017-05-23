@@ -50,5 +50,11 @@
             android:id="@+id/btnStudentDemo"
             android:textSize="20dp"
             android:text="Student"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCollectionDemo"
+            android:textSize="20dp"
+            android:text="Collection"/>
     </LinearLayout>
 </LinearLayout>

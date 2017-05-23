@@ -1,9 +1,13 @@
 package com.example.dell.myapplication;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -13,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -68,6 +73,20 @@ public class AllCollectionActivity extends AppCompatActivity {
                 if(mProgress.isShowing()){
                     mProgress.dismiss();
                 }
+            }
+        });
+        collectionlst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                collection mCollection= (collection) parent.getItemAtPosition(position);
+                //Toast.makeText(AllCollectionActivity.this,mCollection.getColl_name()+"",Toast.LENGTH_LONG).show();
+                Intent it=new Intent(AllCollectionActivity.this,CollectionDetailActivity.class);
+                it.putExtra("coll_name",mCollection.getColl_name());
+                it.putExtra("coll_id",mCollection.getColl_id()+"");
+                it.putExtra("date",mCollection.getDate());
+                startActivity(it);
+
+
             }
         });
     }
