@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.example.dell.myapplication.AllCollectionActivity">
 
-    <ListView
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listcollection"></ListView>
+        android:numColumns="2"
+        android:id="@+id/listcollection"></GridView>
 </LinearLayout>

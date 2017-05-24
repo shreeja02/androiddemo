@@ -22,13 +22,14 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".AllStudentActivity" />
         <activity android:name=".AllCollectionActivity" />
-        <activity android:name=".CollectionDetailActivity"
-            android:parentActivityName=".AllCollectionActivity"
-            >
+        <activity
+            android:name=".CollectionDetailActivity"
+            android:parentActivityName=".AllCollectionActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AllCollectionActivity"
-                />
+                android:value=".AllCollectionActivity" />
+        </activity>
+        <activity android:name=".LoginActivity">
 
         </activity>
     </application>

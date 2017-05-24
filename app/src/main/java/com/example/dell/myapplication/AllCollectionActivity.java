@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,13 +23,13 @@ import java.util.Collection;
 import cz.msebera.android.httpclient.Header;
 
 public class AllCollectionActivity extends AppCompatActivity {
-    ListView collectionlst;
+    GridView collectionlst;
     ArrayList<collection> mArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_collection);
-        collectionlst= (ListView) findViewById(R.id.listcollection);
+        collectionlst= (GridView) findViewById(R.id.listcollection);
         mArrayList=new ArrayList<collection>();
 
         AsyncHttpClient mClient=new AsyncHttpClient();
