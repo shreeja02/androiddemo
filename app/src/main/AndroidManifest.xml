@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".Main2Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +29,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AllCollectionActivity" />
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Main4Activity" />
+        <activity android:name=".StringAdapter"></activity>
+        <activity
+            android:name=".BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/AppTheme.NoActionBar">
 
+        </activity>
+        <activity
+            android:name=".StrAdapterDemo"
+            android:label="@string/title_activity_str_adapter_demo"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.myapplication.Main2Activity" />
         </activity>
     </application>
 

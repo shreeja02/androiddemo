@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="title_activity_basic">BasicActivity</string>
+    <string name="title_activity_str_adapter_demo">StrAdapterDemo</string>
 </resources>

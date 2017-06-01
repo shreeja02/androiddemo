@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
-    Button btncalc,btnlogin,btnsignup,btnStudent,btnCollection;
+    Button btncalc,btnlogin,btnsignup,btnStudent,btnCollection,btnStrAdapter;
     EditText et1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,17 @@ public class Main2Activity extends AppCompatActivity {
         btnsignup= (Button) findViewById(R.id.btnmain2signup);
         btnStudent= (Button) findViewById(R.id.btnStudentDemo);
         btnCollection= (Button) findViewById(R.id.btnCollectionDemo);
+        btnStrAdapter= (Button) findViewById(R.id.btnStrAdapter);
         et1= (EditText) findViewById(R.id.txtmain2demo);
+
+
+        btnStrAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it5=new Intent(Main2Activity.this,StrAdapterDemo.class);
+                startActivity(it5);
+            }
+        });
 
         btncalc.setOnClickListener(new View.OnClickListener() {
             @Override
