@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main3Activity" />
+
         <activity android:name=".AllStudentActivity" />
         <activity android:name=".AllCollectionActivity" />
         <activity
