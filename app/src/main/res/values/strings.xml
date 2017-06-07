@@ -2,4 +2,5 @@
     <string name="app_name">My Application</string>
     <string name="title_activity_basic">BasicActivity</string>
     <string name="title_activity_str_adapter_demo">StrAdapterDemo</string>
+    <string name="title_activity_edit_text_on_same_page">EditTextOnSamePage</string>
 </resources>

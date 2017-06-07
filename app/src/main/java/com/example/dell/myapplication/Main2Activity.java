@@ -1,6 +1,8 @@
 package com.example.dell.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +14,8 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
-    Button btncalc,btnlogin,btnsignup,btnStudent,btnCollection,btnStrAdapter;
+    Button btncalc,btnlogin,btnsignup,btnStudent,btnCollection,
+            btnStrAdapter,btnLoginActive,btnLogout;
     EditText et1;
 
     @Override
@@ -36,6 +39,26 @@ public class Main2Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+   @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alert=new AlertDialog.Builder(this);
+        alert.setMessage("Are you sure you want to exit?");
+        alert.setCancelable(false);
+        alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alert.create().show();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +72,8 @@ public class Main2Activity extends AppCompatActivity {
         btnStudent= (Button) findViewById(R.id.btnStudentDemo);
         btnCollection= (Button) findViewById(R.id.btnCollectionDemo);
         btnStrAdapter= (Button) findViewById(R.id.btnStrAdapter);
+        btnLoginActive= (Button) findViewById(R.id.btnLogin);
+        btnLogout= (Button) findViewById(R.id.btnLogout);
         et1= (EditText) findViewById(R.id.txtmain2demo);
 
 
@@ -59,6 +84,14 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(it5);
             }
         });
+        btnLoginActive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent itlogin=new Intent(Main2Activity.this,ActiveSessionActivity.class);
+                startActivity(itlogin);
+            }
+        });
+
 
         btncalc.setOnClickListener(new View.OnClickListener() {
             @Override

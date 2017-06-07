@@ -134,6 +134,7 @@ public class AllCollectionActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 collectionlst.setAdapter(new collection_custom_adapter(AllCollectionActivity.this,mArrayList));
                registerForContextMenu(collectionlst);
 
