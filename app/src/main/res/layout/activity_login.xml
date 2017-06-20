@@ -7,14 +7,25 @@
     android:orientation="vertical"
     tools:context="com.example.dell.myapplication.LoginActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtLoginName"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtLoginColl_name"/>
+            android:id="@+id/txtLoginColl_name"
+            android:visibility="invisible"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnLoginAdd"
         android:background="@android:drawable/ic_input_add"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLoginStart"
+        android:text="login" />
 </LinearLayout>

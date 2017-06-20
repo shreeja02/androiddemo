@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.dell.myapplication.Main2Activity">
 
     <item android:id="@+id/menuAdd"
         android:icon="@android:drawable/ic_input_add"
@@ -10,5 +13,17 @@
     <item android:id="@+id/help"
         android:icon="@mipmap/ic_launcher"
         android:title="Help" />
+    <item android:id="@+id/help1"
+        android:text="Shreenil"
+        android:title="Shreenil"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/help2"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Meet" />
 
+    <item android:id="@+id/action_search2"
+        android:title="Search"
+        android:icon="@mipmap/ic_search"
+        yourapp:showAsAction="always|collapseActionView"
+        yourapp:actionViewClass="android.support.v7.widget.SearchView" />
 </menu>

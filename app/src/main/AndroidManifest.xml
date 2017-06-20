@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dell.myapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity" />
+        <activity android:name=".Main2Activity">
+
+        </activity>
         <activity android:name=".Main3Activity" />
         <activity android:name=".AllStudentActivity" />
         <activity android:name=".AllCollectionActivity" />
@@ -39,11 +41,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.dell.myapplication.Main2Activity" />
         </activity>
-        <activity android:name=".Splash">
-
-        </activity>
+        <activity android:name=".Splash" />
         <activity
             android:name=".EditTextOnSamePage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ActiveSessionActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".DrawerActivity"
+            android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,7 +68,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActiveSessionActivity"></activity>
     </application>
 
 </manifest>

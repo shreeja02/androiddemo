@@ -1,6 +1,9 @@
 package com.example.dell.myapplication;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,14 +25,36 @@ import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText txtColl_name;
-    Button btnLoginAdd;
+    private static final String MYPREFERENCES ="MyPrefs" ;
+    String name="";
+    EditText txtColl_name,txtname;
+    Button btnLoginAdd,login;
+    SharedPreferences sharedPreferences;
+SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         txtColl_name= (EditText) findViewById(R.id.txtLoginColl_name);
         btnLoginAdd= (Button) findViewById(R.id.btnLoginAdd);
+        login= (Button) findViewById(R.id.btnLoginStart);
+        txtname= (EditText) findViewById(R.id.txtLoginName);
+        sharedPreferences=getSharedPreferences(MYPREFERENCES, Context.MODE_PRIVATE);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                        name=txtname.getText()+"";
+                        /*editor.putString("name",name);
+                        editor.commit();*/
+                sharedPreferences=getApplicationContext().getSharedPreferences(MYPREFERENCES,0);
+                editor=sharedPreferences.edit();
+                editor.putString("uname",name);
+                editor.commit();
+                Intent it=new Intent(LoginActivity.this,Main2Activity.class);
+                startActivity(it);
+            }
+        });
 
         btnLoginAdd.setOnClickListener(new View.OnClickListener() {
             @Override

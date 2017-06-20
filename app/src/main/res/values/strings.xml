@@ -3,4 +3,11 @@
     <string name="title_activity_basic">BasicActivity</string>
     <string name="title_activity_str_adapter_demo">StrAdapterDemo</string>
     <string name="title_activity_edit_text_on_same_page">EditTextOnSamePage</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

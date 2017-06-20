@@ -77,5 +77,37 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnLogout"
             android:text="Logout"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMain2Session"
+            android:text="GetSession"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMain2SharePhone"
+            android:background="@mipmap/ic_launcher_phone"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share on WA"
+            android:id="@+id/btnMain2ShareWA"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share on FB"
+            android:id="@+id/btnMain2ShareFB"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share on MAIL"
+            android:id="@+id/btnMain2ShareMAIL"/>
+    </LinearLayout>
+
 </LinearLayout>

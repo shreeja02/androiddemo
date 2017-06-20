@@ -2,9 +2,12 @@ package com.example.dell.myapplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +34,28 @@ public class AllCollectionActivity extends AppCompatActivity {
     ListView collectionlst;
     ArrayList<collection> mArrayList;
     AsyncHttpClient mClient;
+    collection_custom_adapter custom;
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.searchmenu,menu);
+        MenuItem mSearchItem=menu.findItem(R.id.searchCollection);
+        SearchView searchView= (SearchView) MenuItemCompat.getActionView(mSearchItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //Toast.makeText(AllCollectionActivity.this,query,Toast.LENGTH_LONG).show();
+                
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -72,9 +97,7 @@ public class AllCollectionActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                     super.onSuccess(statusCode, headers, response);
-                    mArrayList.remove(selectedItem);
-                    collectionlst.setAdapter(new collection_custom_adapter(AllCollectionActivity.this,mArrayList));
-                   // Toast.makeText(AllCollectionActivity.this,"Deleted",Toast.LENGTH_LONG).show();
+
                 }
 
                 @Override
@@ -97,9 +120,12 @@ public class AllCollectionActivity extends AppCompatActivity {
                     }}
 
             });
+            mArrayList.remove(selectedItem);
+            custom.notifyDataSetChanged();
+
             //mClient.post(LoginActivity.this,"https://reunirbackend.herokuapp.com/collection",entity,"application/json",new JsonHttpResponseHandler(){
 
-            Toast.makeText(AllCollectionActivity.this,selectedItem.getColl_name(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(AllCollectionActivity.this,selectedItem.getColl_name(),Toast.LENGTH_LONG).show();
         }
         else{
             Toast.makeText(AllCollectionActivity.this,"Edit",Toast.LENGTH_LONG).show();
@@ -134,8 +160,8 @@ public class AllCollectionActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-                collectionlst.setAdapter(new collection_custom_adapter(AllCollectionActivity.this,mArrayList));
+                custom=new collection_custom_adapter(AllCollectionActivity.this,mArrayList);
+                collectionlst.setAdapter(custom);
                registerForContextMenu(collectionlst);
 
 
